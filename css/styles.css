@@ -25,3 +25,7 @@
 .BookmarkButtonContainer:hover .BookmarkButton {
   fill: #e3c612;
 }
+
+.BookmarkButtonAdded {
+  fill: #e3c612;
+}

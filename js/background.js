@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-
     switch(request.type) {
+
       case "create":
         chrome.bookmarks.create({
           'title': request.url,
@@ -11,10 +11,18 @@ chrome.runtime.onMessage.addListener(
         break;
 
       case "get":
-        var c = 0;
         chrome.bookmarks.search(request.url, function(results){
-          let hasBeenAdded = (results.length > 0) ? true : false;
-          sendResponse({status: "ok", hasBeenAdded: hasBeenAdded});
+          let bookmarked = (results.length > 0) ? true : false;
+          sendResponse({status: "ok", bookmarked: bookmarked});
+        })
+        break;
+      
+      case "remove":
+        chrome.bookmarks.search(request.url, function(results){
+          for (let res of results) {
+            chrome.bookmarks.remove(res.id);
+          }
+          sendResponse({status: "ok", bookmarked: false});
         })
         break;
     }
