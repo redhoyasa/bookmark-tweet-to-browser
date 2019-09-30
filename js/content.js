@@ -20,6 +20,10 @@ function generateBookmarkButton(tweet) {
   let tweetUrl = $(tweet).find(TWEET_INFO_XPATH)[0].href;
   let lastReaction = $(tweet).find(REACTION_GROUP_XPATH).children().last();
 
+  chrome.runtime.sendMessage({type: "get", url: tweetUrl}, function(response) {
+    console.log(response);
+  });
+
   let htmlContent = `
     <div id="bookmarkButton-${id}" data-permalink-path="${tweetUrl}">
       <div class="BookmarkButtonContainer" type="button">
@@ -34,10 +38,8 @@ function generateBookmarkButton(tweet) {
   // bind click event
   $(tweet).on("click", `#bookmarkButton-${id}`, function(event){
     event.preventDefault();
-  
-    let url = $(this).data("permalink-path");
 
-    chrome.runtime.sendMessage({url: url}, function(response) {
+    chrome.runtime.sendMessage({type: "create", url: tweetUrl}, function(response) {
       console.log(response.status);
     });
   });
