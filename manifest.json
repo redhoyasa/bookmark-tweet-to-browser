@@ -1,0 +1,21 @@
+{
+  "name": "Twitter Chrome Bookmark Button",
+  "version": "0.1.0",
+  "description": "Bookmark to Chrome directly from timeline with button",
+  "permissions": ["activeTab", "declarativeContent", "storage", "bookmarks"],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "run_at": "document_idle",
+    "matches": ["*://*.twitter.com/*"],
+    "css": ["css/styles.css"],
+    "js": [
+      "js/lib/jquery-3.4.1.min.js",
+      "js/lib/arrive-2.4.1.min.js",
+      "js/content.js"
+    ]
+  }],
+  "manifest_version": 2
+}

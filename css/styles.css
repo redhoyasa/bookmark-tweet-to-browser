@@ -1,0 +1,26 @@
+.BookmarkButton {
+  fill: #8899a6;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  left: 9px;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.BookmarkButtonContainer {
+  cursor: pointer;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  margin-top: -2px;
+  position: relative;
+}
+
+.BookmarkButtonContainer:hover {
+  background:rgb(255, 254, 200, 0.4);
+}
+
+.BookmarkButtonContainer:hover .BookmarkButton {
+  fill: #e3c612;
+}
