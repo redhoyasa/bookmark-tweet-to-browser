@@ -10,22 +10,35 @@ const STAR_FILLED_ICON = `<svg class="${STAR_FILLED_CLASSES}" xmlns="http://www.
 
 
 $(document).arrive(TWEET_XPATH, function(tweet) {
-  let tweetUrl = $(tweet).find(TWEET_INFO_XPATH)[0].href;
-
-  let lastReaction = $(tweet).find(REACTION_GROUP_XPATH).children().last();
-  let bookmarkButton = generateBookmarkButton(tweetUrl);
-
-  $(bookmarkButton).insertBefore(lastReaction);
+  generateBookmarkButton(tweet);
 });
 
-function generateBookmarkButton(permalink) {
+function generateBookmarkButton(tweet) {
   let id = Math.random().toString(36).substring(7);
 
-  return `
-    <div id="bookmarkButton-${id}" data-permalink-path="${permalink}">
-      <div class="BookmarkButtonContainer">
+  // get reaction section of tweet
+  let tweetUrl = $(tweet).find(TWEET_INFO_XPATH)[0].href;
+  let lastReaction = $(tweet).find(REACTION_GROUP_XPATH).children().last();
+
+  let htmlContent = `
+    <div id="bookmarkButton-${id}" data-permalink-path="${tweetUrl}">
+      <div class="BookmarkButtonContainer" type="button">
         ${STAR_THIN_ICON}
       </div>
     </div>
   `
+
+  // append button
+  $(htmlContent).insertBefore(lastReaction);
+
+  // bind click event
+  $(tweet).on("click", `#bookmarkButton-${id}`, function(event){
+    event.preventDefault();
+  
+    let url = $(this).data("permalink-path");
+
+    chrome.runtime.sendMessage({url: url}, function(response) {
+      console.log(response.status);
+    });
+  });
 }

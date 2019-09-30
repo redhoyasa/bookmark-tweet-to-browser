@@ -15,6 +15,7 @@
   height: 35px;
   margin-top: -2px;
   position: relative;
+  pointer-events: auto;
 }
 
 .BookmarkButtonContainer:hover {
