@@ -1,3 +1,6 @@
+import "arrive/minified/arrive.min.js";
+
+
 const TWEET_XPATH = "section > div > div > div > div article > div";
 const REACTION_GROUP_XPATH = "> div:last-child > div:last-child > div:last-child";
 const TWEET_INFO_XPATH = "> div:last-child > div:last-child > div:first-child > div:first-child > a";

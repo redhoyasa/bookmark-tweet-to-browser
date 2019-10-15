@@ -1,0 +1,28 @@
+{
+  "name": "twitter-browser-bookmark-button",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/redhoyasa/twitter-browser-bookmark-button.git",
+  "author": "redhoyasa <redhoyasa@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:watch": "webpack --mode development --display-error-details --progress --watch",
+    "build:prod": "webpack --mode production --display-error-details --progress"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+    "arrive": "^2.4.1",
+    "jquery": "^3.4.1"
+  }
+}

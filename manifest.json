@@ -4,18 +4,15 @@
   "description": "Bookmark to Chrome directly from timeline with button",
   "permissions": ["activeTab", "declarativeContent", "storage", "bookmarks"],
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": ["dist/background.js"],
     "persistent": false
   },
   "content_scripts": [{
     "run_at": "document_idle",
     "matches": ["*://*.twitter.com/*"],
-    "css": ["css/styles.css"],
-    "js": [
-      "js/lib/jquery-3.4.1.min.js",
-      "js/lib/arrive-2.4.1.min.js",
-      "js/content.js"
-    ]
+    "css": ["dist/css/styles.css"],
+    "js": ["dist/content.js"]
   }],
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
