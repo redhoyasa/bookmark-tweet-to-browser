@@ -13,7 +13,9 @@ const STAR_FILLED_ICON = `<svg class="${STAR_FILLED_CLASSES}" xmlns="http://www.
 
 
 $(document).arrive(TWEET_XPATH, function(tweet) {
-  generateBookmarkButton(tweet);
+  try {
+    generateBookmarkButton(tweet);  
+  } catch (err) { }
 });
 
 function generateBookmarkButton(tweet) {

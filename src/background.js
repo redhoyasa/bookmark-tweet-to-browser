@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     switch(request.type) {
-
       case "create":
         chrome.storage.sync.get(["bookmarkFolder"], function(result) {
           if (result.bookmarkFolder) {

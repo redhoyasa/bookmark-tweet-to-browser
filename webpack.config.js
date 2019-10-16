@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -23,6 +24,11 @@ module.exports = {
 		}),
     new MiniCssExtractPlugin({
 			filename: 'css/[name].css'
+    }),
+    new WebpackShellPlugin({
+			onBuildExit: [
+				"rm ./dist/styles.js"
+			]
 		}),
     new webpack.ProvidePlugin({
       $: "jquery",
