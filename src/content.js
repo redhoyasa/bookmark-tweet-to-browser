@@ -42,7 +42,7 @@ function generateBookmarkButton(tweet) {
     `
 
     // append button
-    $(htmlContent).insertBefore(lastReaction);
+    $(htmlContent).insertAfter(lastReaction);
   });
 
   // bind click event

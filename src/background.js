@@ -2,22 +2,13 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     switch(request.type) {
       case "create":
-        chrome.storage.sync.get(["bookmarkFolder"], function(result) {
-          if (result.bookmarkFolder) {
-            chrome.bookmarks.create({
-              'parentId': result.bookmarkFolder,
-              'title': request.url,
-              'url': request.url
-            });
-          } else {
-            chrome.bookmarks.create({
-              'title': request.url,
-              'url': request.url
-            });
-          }
-          
-          sendResponse({status: "ok"});
-        });        
+        chrome.bookmarks.create({
+          'title': request.url,
+          'url': request.url
+        }, function(result) {
+          sendResponse({status: "ok", bookmarked: true});       
+        });
+        
         break;
 
       case "get":

@@ -10,7 +10,6 @@ module.exports = {
 	},
   entry: {
     content: path.join(__dirname, "src", "content.js"),
-    options: path.join(__dirname, "src", "options.js"),
     background: path.join(__dirname, "src", "background.js"),
     styles: path.join(__dirname, "src", "css", "styles.css")
   },
