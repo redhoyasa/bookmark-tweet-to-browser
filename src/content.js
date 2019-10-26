@@ -23,7 +23,12 @@ function generateBookmarkButton(tweet) {
 
   // get reaction section of tweet
   let tweetUrl = $(tweet).find(TWEET_INFO_XPATH)[0].href;
+  let firstReaction = $(tweet).find(REACTION_GROUP_XPATH).children().first();
   let lastReaction = $(tweet).find(REACTION_GROUP_XPATH).children().last();
+
+  let firstReactionClass = firstReaction.attr('class');
+  let lastReactionClass = lastReaction.attr('class');
+  lastReaction.removeClass(lastReactionClass).addClass(firstReactionClass);
 
   // check if tweet has been added to bookmarks
   chrome.runtime.sendMessage({type: "get", url: tweetUrl}, function(response) {
@@ -42,7 +47,7 @@ function generateBookmarkButton(tweet) {
     `
 
     // append button
-    $(htmlContent).insertAfter(lastReaction);
+    $(htmlContent).insertAfter(lastReaction).addClass(firstReactionClass);
   });
 
   // bind click event

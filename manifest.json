@@ -1,7 +1,7 @@
 {
-  "name": "Twitter Chrome Bookmark Button",
+  "name": "Bookmark Tweet to Browser",
   "version": "0.1.0",
-  "description": "Bookmark to Chrome directly from timeline with button",
+  "description": "Bookmark tweet to browser bookmark directly from timeline using embedded button",
   "permissions": ["activeTab", "declarativeContent", "storage", "bookmarks"],
   "background": {
     "scripts": ["dist/background.js"],
