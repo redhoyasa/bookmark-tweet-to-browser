@@ -13,6 +13,11 @@
     "css": ["dist/css/styles.css"],
     "js": ["dist/content.js"]
   }],
+  "icons": {
+		"16": "app/images/icon16.png",
+		"48": "app/images/icon48.png",
+		"128": "app/images/icon128.png"
+	},
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

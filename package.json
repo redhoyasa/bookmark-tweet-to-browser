@@ -1,8 +1,8 @@
 {
-  "name": "twitter-browser-bookmark-button",
+  "name": "bookmark-tweet-to-browser",
   "version": "0.1.0",
   "private": true,
-  "repository": "https://github.com/redhoyasa/twitter-browser-bookmark-button.git",
+  "repository": "https://github.com/redhoyasa/bookmark-tweet-to-browser.git",
   "author": "redhoyasa <redhoyasa@gmail.com>",
   "license": "MIT",
   "scripts": {
