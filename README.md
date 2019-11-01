@@ -1,4 +1,6 @@
 # Bookmark Tweet To Browser
+![](app/images/icon128.png)
+
 Bookmark tweet to browser bookmark directly from timeline using embedded button.
 
 ## Overview
@@ -12,7 +14,7 @@ This extension provides shortcut to bookmark tweet directly from timeline using 
 - Remove bookmarked tweet from browser bookmark
 
 ## Downloads
-[Chrome]()
+[Chrome](https://chrome.google.com/webstore/detail/bookmark-tweet-to-browser/fcohgfilngajddgokkckbpfkpmojoejf)
 
 ## Maintainers
 
