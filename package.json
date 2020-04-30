@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "arrive": "^2.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "serialize-javascript": "^2.1.1"
   }
 }
